@@ -44,7 +44,7 @@ async function starts() {
 	    await client.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./session.json', JSON.stringify(client.base64EncodedAuthInfo(), null, '\t'))
   
-        teks = `https://chat.whatsapp.com/EovTV7blporBvWncIOXDBA`
+        teks = ``
         client.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
 
         client.on("group-update", async (anu) => {
